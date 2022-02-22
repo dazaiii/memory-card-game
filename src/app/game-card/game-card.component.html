@@ -1,0 +1,8 @@
+<div (click)="cardClicked.emit()">
+    <div *ngIf="cardData.status === 'default'" class="image">
+        <img src="assets/card-back.jpeg" alt="Card back" class="image">
+    </div>
+    <div *ngIf="cardData.status === 'flipped' || cardData.status === 'matched'" class="image">
+        <img src="{{ imagePath }}" alt="Card" class="image">
+    </div>
+</div>

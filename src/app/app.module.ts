@@ -6,15 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GameCardComponent } from './game-card/game-card.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    GameCardComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule
-  ],
+  declarations: [AppComponent, GameCardComponent],
+  imports: [BrowserModule, BrowserAnimationsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

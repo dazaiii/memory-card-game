@@ -1,10 +1,13 @@
-<section class="background">
-  <h1 class="title">Memory card game</h1>
-  <div class = "button-container">
-    <button class="play-again-button" (click)=playAgain()>Play again</button>
-  </div>
-  <h3 class="win-text" *ngIf="matched === 2 * imagesAmount">You won</h3>
-  <div class="board">
-    <app-game-card *ngFor="let card of cards; let id=index" [cardData]=card (cardClicked)="cardClicked(card)"></app-game-card>
-  </div>
-</section>
+<h1 class="title">Memory card game</h1>
+<div class="button-container">
+  <button class="play-again-button" (click)="playAgain()">Play again</button>
+</div>
+<h3 class="win-text" *ngIf="matched === 2 * imagesAmount">You won</h3>
+<div class="board">
+  <app-game-card
+    class="game-card"
+    *ngFor="let card of cards"
+    [cardData]="card"
+    (cardClicked)="cardClicked(card)"
+  ></app-game-card>
+</div>

@@ -29,7 +29,6 @@ import {
       state(
         'matched',
         style({
-          visibility: 'false',
           transform: 'scale(0.05)',
           opacity: 0,
         })
@@ -47,19 +46,17 @@ export class GameCardComponent implements OnInit {
   @Output()
   cardClicked = new EventEmitter();
 
-  public imageId: number = 1;
+  private path: string = 'assets/';
 
-  public path: string = 'assets/';
-
-  public imagePath: string = '';
+  imagePath: string = '';
 
   constructor() {}
 
   ngOnInit(): void {
-    this.createImagePath(this.cardData);
+    this.createImagePath();
   }
 
-  createImagePath(cardData: CardData): void {
+  createImagePath(): void {
     this.imagePath = this.path + this.cardData.imageId + '.jpeg';
   }
 }

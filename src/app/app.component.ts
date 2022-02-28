@@ -70,13 +70,13 @@ export class AppComponent implements OnInit {
 
   cardClicked(card: CardData): void {
     if (card.status === CardStatus.Default && this.flippedCount < 2) {
-      console.log(card.imageId + ' ' + card.status);
       card.status = CardStatus.Flipped;
-      console.log(card.imageId + ' ' + card.status);
       this.flippedCount += 1;
     }
     if (this.flippedCount === 2) {
-      this.matchCards();
+      timer(400).subscribe((done) => {
+        this.matchCards();
+      });
     }
   }
 
@@ -92,20 +92,17 @@ export class AppComponent implements OnInit {
         this.cards.forEach((card) => {
           if (card.imageId === cardsToMatch[0].imageId) {
             card.status = CardStatus.Matched;
-            console.log(card.imageId + ' ' + card.status);
             this.matched += 1;
           }
         });
-      }
-      if (cardsToMatch[0].imageId !== cardsToMatch[1].imageId) {
-        timer(500).subscribe((done) => {
+      } else {
+        timer(400).subscribe((done) => {
           this.cards.forEach((card) => {
             if (
               card.imageId === cardsToMatch[0].imageId ||
               card.imageId === cardsToMatch[1].imageId
             ) {
               card.status = CardStatus.Default;
-              console.log(card.imageId + ' ' + card.status);
             }
           });
         });

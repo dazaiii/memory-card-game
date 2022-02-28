@@ -1,15 +1,30 @@
 .container {
-  width: 180px;
-  height: 280px;
-  position: relative;
+  height: 100%;
   cursor: pointer;
+  transform-style: preserve-3d;
+  user-select: none;
 }
 
-.image {
+.front,
+.back {
   width: 100%;
   height: 100%;
-  justify-self: center;
   border-radius: 10px;
   position: absolute;
   backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.back {
+  transform: rotateY(0deg);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }

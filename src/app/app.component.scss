@@ -1,57 +1,35 @@
-.title {
-  font: bold;
-  font-style: oblique;
-  color: palevioletred;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-align: center;
-  margin-bottom: 5px;
-  user-select: none;
+mat-toolbar {
+  background: rgb(219, 196, 196);
+  color: rgb(139, 83, 102);
 }
 
-.win-text {
-  font-style: oblique;
-  color: palevioletred;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-align: center;
-  user-select: none;
-}
-
-.container {
-  text-align: center;
-}
-
-.play-again-button {
-  background-color: palevioletred;
+mat-sidenav {
+  width: 300px;
+  border-right: none;
+  background: rgb(139, 83, 102);
   color: white;
-  border: none;
   text-align: center;
-  padding: 8px 8px;
-  margin-bottom: 10px;
-  cursor: pointer;
+  margin: 16px;
+  padding: 16px;
 }
 
-.board {
-  width: 100%;
-  height: 85%;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 5px;
-  justify-items: center;
-  justify-content: center;
+.title {
+  margin-left: 20px;
 }
 
-.game-card {
-  min-width: 100px;
-  width: 50%;
-  aspect-ratio: 2/3;
+.menu-button-texts {
+  padding-left: 10px;
 }
 
-@media only screen and (max-width: 600px) {
-  .board {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .game-card {
-    min-width: 50px;
-    max-width: 70px;
-  }
+.content {
+  height: fit-content;
+  padding-bottom: 50px;
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+  background-color: transparent;
 }

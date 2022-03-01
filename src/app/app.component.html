@@ -1,19 +1,28 @@
-<div class="container">
-  <h1 class="title">Memory card game</h1>
-  <div>
-    <button class="play-again-button" (click)="playAgain()">Play again</button>
-    <app-time-counter
-      [startTimer]="startTime"
-      [isTimeStopped]="stopTimer()"
-    ></app-time-counter>
-  </div>
-</div>
-<h2 class="win-text" [@gameStatus]="gameStatus">You won</h2>
-<div class="board">
-  <app-game-card
-    class="game-card"
-    *ngFor="let card of cards"
-    [cardData]="card"
-    (cardClicked)="cardClicked(card)"
-  ></app-game-card>
-</div>
+<mat-toolbar>
+  <button mat-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="title">Memory card game</div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav class="mat-elevation-z8">
+    <button mat-button class="menu-button">
+      <mat-icon>home</mat-icon>
+      <span class="menu-button-texts">Home</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>border_all</mat-icon>
+      <span class="menu-button-texts">Memory card game</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>info</mat-icon>
+      <span class="menu-button-texts">About</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <app-memory-game-board></app-memory-game-board>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

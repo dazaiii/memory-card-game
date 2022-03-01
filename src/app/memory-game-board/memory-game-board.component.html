@@ -1,0 +1,19 @@
+<div class="container">
+  <button mat-button class="play-again-button" (click)="playAgain()">
+    <mat-icon>replay</mat-icon>
+    <span class="play-again-text">Play again</span>
+  </button>
+  <app-time-counter
+    [startTimer]="startTime"
+    [isTimeStopped]="stopTimer()"
+  ></app-time-counter>
+</div>
+<h2 class="win-text" [@gameStatus]="gameStatus">You won</h2>
+<div class="board">
+  <app-game-card
+    class="game-card"
+    *ngFor="let card of cards"
+    [cardData]="card"
+    (cardClicked)="cardClicked(card)"
+  ></app-game-card>
+</div>

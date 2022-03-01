@@ -1,11 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { CardData, CardStatus } from 'src/models/card.models';
 import { timer } from 'rxjs';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
+import { GameStatus } from 'src/models/game.models';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('gameStatus', [
+      state(
+        'DuringTheGame',
+        style({
+          transform: 'none',
+          opacity: 0,
+        })
+      ),
+      state(
+        'GameCompleted',
+        style({
+          opacity: 1,
+        })
+      ),
+      transition('DuringTheGame => GameCompleted', [animate('400ms')]),
+      transition('GameCompleted => DuringTheGame', [animate('400ms')]),
+    ]),
+  ],
 })
 export class AppComponent implements OnInit {
   images: string[] = [];
@@ -20,6 +47,10 @@ export class AppComponent implements OnInit {
 
   chosenImages: number[] = [];
 
+  startTime: Date;
+
+  gameStatus: GameStatus;
+
   ngOnInit(): void {
     this.playAgain();
   }
@@ -30,6 +61,17 @@ export class AppComponent implements OnInit {
     this.chosenImages = [];
     this.addImages();
     this.addCards();
+    this.startTime = new Date(Date.now());
+    this.gameStatus = GameStatus.DuringTheGame;
+  }
+
+  checkGameStatus() {
+    if (this.matched !== 2 * this.imagesAmount) {
+      this.gameStatus = GameStatus.DuringTheGame;
+    }
+    if (this.matched === 2 * this.imagesAmount) {
+      this.gameStatus = GameStatus.GameCompleted;
+    }
   }
 
   addImages(): void {
@@ -109,5 +151,10 @@ export class AppComponent implements OnInit {
       }
     }
     this.flippedCount = 0;
+    this.checkGameStatus();
+  }
+
+  stopTimer(): boolean {
+    return this.gameStatus === GameStatus.GameCompleted ? true : false;
   }
 }

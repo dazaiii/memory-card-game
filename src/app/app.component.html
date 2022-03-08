@@ -7,22 +7,22 @@
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav class="mat-elevation-z8">
-    <button mat-button class="menu-button">
+    <button mat-button (click)="sidenav.toggle()" routerLink="/home">
       <mat-icon>home</mat-icon>
       <span class="menu-button-texts">Home</span>
     </button>
-    <button mat-button class="menu-button">
+    <button mat-button (click)="sidenav.toggle()" routerLink="/game">
       <mat-icon>border_all</mat-icon>
       <span class="menu-button-texts">Memory card game</span>
     </button>
-    <button mat-button class="menu-button">
+    <button mat-button (click)="sidenav.toggle()" routerLink="/info">
       <mat-icon>info</mat-icon>
       <span class="menu-button-texts">About</span>
     </button>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="content mat-elevation-z8">
-      <app-memory-game-board></app-memory-game-board>
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

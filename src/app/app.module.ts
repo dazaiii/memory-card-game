@@ -11,6 +11,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MemoryGameBoardComponent } from './memory-game-board/memory-game-board.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,8 @@ import { MatMenuModule } from '@angular/material/menu';
     GameCardComponent,
     TimeCounterComponent,
     MemoryGameBoardComponent,
+    HomeComponent,
+    InfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +32,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

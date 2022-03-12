@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Subscription, timer } from 'rxjs';
 
 const time = timer(0, 1000);
@@ -33,13 +33,12 @@ export class TimeCounterComponent {
     }
   }
 
-  countTime() {
+  countTime(): void {
     let actualDate = new Date(Date.now());
     this.timer = new Date(actualDate.getTime() - this.startTimer.getTime());
   }
 
-  stopTimer() {
+  stopTimer(): void {
     this.subscription.unsubscribe();
-    console.log('zatrzymano czas');
   }
 }

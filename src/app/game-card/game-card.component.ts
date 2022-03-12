@@ -48,15 +48,15 @@ export class GameCardComponent implements OnInit {
 
   private path: string = 'assets/';
 
-  imagePath: string = '';
-
   constructor() {}
 
   ngOnInit(): void {
-    this.createImagePath();
+    if (this.cardData) {
+      this.createImagePath();
+    }
   }
 
-  createImagePath(): void {
-    this.imagePath = this.path + this.cardData.imageId + '.jpeg';
+  createImagePath(): string {
+    return this.path + this.cardData.imageId + '.jpeg';
   }
 }

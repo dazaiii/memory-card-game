@@ -41,7 +41,7 @@ export class MemoryGameBoardComponent implements OnInit {
 
   flippedCount: number = 0;
 
-  readonly imagesAmount: number = 2;
+  readonly imagesAmount: number = 9;
 
   matched: number = 0;
 
@@ -121,7 +121,7 @@ export class MemoryGameBoardComponent implements OnInit {
       this.flippedCount += 1;
     }
     if (this.flippedCount === 2) {
-      timer(400).subscribe((done) => {
+      timer(400).subscribe(() => {
         this.matchCards();
       });
     }
@@ -143,7 +143,7 @@ export class MemoryGameBoardComponent implements OnInit {
           }
         });
       } else {
-        timer(400).subscribe((done) => {
+        timer(400).subscribe(() => {
           this.cards.forEach((card) => {
             if (
               card.imageId === cardsToMatch[0].imageId ||

@@ -1,5 +1,6 @@
 <div
   (click)="cardClicked.emit()"
+  *ngIf="cardData"
   [@cardFlip]="cardData.status"
   class="container"
 >
@@ -7,6 +8,6 @@
     <img src="assets/card-back.jpeg" alt="Card back" />
   </div>
   <div class="front">
-    <img src="{{ imagePath }}" alt="Card front" />
+    <img [src]="createImagePath()" alt="Card front" />
   </div>
 </div>

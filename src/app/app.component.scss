@@ -1,38 +1,40 @@
+@import "../importable/colors.scss";
+
 mat-toolbar {
-  background: rgb(219, 196, 196);
-  color: rgb(139, 83, 102);
+  background: $light-pink;
+  color: $pink;
 }
 
 mat-sidenav {
-  width: 300px;
+  width: 18.75rem;
   border-right: none;
-  background: rgb(139, 83, 102);
-  color: white;
+  background: $pink;
+  color: $white;
   text-align: center;
-  margin: 16px;
-  padding: 16px;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 a {
-  color: white;
+  color: $white;
 }
 
 .title {
-  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 
 .menu-button-texts {
-  padding-left: 10px;
+  padding-left: 0.6rem;
 }
 
 .content {
   height: fit-content;
-  padding-bottom: 50px;
-  border-radius: 10px;
-  margin: 16px;
+  padding-bottom: 3rem;
+  border-radius: 0.6rem;
+  margin: 1rem;
 }
 
 mat-sidenav-container {
-  height: calc(100vh - 65px);
+  height: calc(100vh - 4rem);
   background-color: transparent;
 }

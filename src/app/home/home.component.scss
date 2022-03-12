@@ -1,3 +1,5 @@
+@import "../../importable/colors.scss";
+
 .home {
   display: flex;
   justify-content: center;
@@ -6,13 +8,9 @@
 }
 
 .navigation-button {
-  background: linear-gradient(
-    to bottom right,
-    rgb(219, 196, 196),
-    rgb(139, 83, 102)
-  );
-  border-radius: 12px;
-  font-size: 25px;
+  background: linear-gradient(to bottom right, $light-pink, $pink);
+  border-radius: 0.75rem;
+  font-size: 1.5rem;
   padding: 2rem 6rem;
   text-align: center;
   transition: box-shadow 0.2s ease-in-out;
@@ -21,13 +19,13 @@
 
   &:hover,
   &:focus {
-    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
-      -0.125rem -0.125rem 1rem rgba(139, 83, 102, 0.5),
-      0.125rem 0.125rem 1rem rgba(219, 196, 196, 0.5);
+    box-shadow: 0 0 0.25rem $black-alpha,
+      -0.125rem -0.125rem 1rem $dark-pink-alpha,
+      0.125rem 0.125rem 1rem $warm-gray-alpha;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5rem) {
   .home {
     flex-direction: column;
   }

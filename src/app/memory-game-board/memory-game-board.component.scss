@@ -1,9 +1,24 @@
+@import "../../importable/colors.scss";
+
 .win-text {
-  font-style: oblique;
-  color: rgb(139, 83, 102);
+  color: $pink;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-align: center;
+  font-size: 1.25rem;
   user-select: none;
+}
+
+.info-text {
+  color: $pink;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 1.25rem;
+  display: flex;
+  float: right;
+  border-radius: 5%;
+  margin-top: 1.2rem;
+  padding: 0.3rem;
+  margin-right: 0.9rem;
 }
 
 .container {
@@ -11,24 +26,24 @@
 }
 
 .play-again-button {
-  background-color: rgb(139, 83, 102);
-  color: white;
+  background-color: $pink;
+  color: $white;
   border: none;
-  margin-left: 15px;
-  margin-top: 20px;
+  margin-left: 0.9rem;
+  margin-top: 0.6rem;
   float: left;
   transition-duration: 0.4s;
-  padding-left: 10px;
+  padding-left: 0.6rem;
   cursor: pointer;
 }
 
 .play-again-text {
-  padding-left: 5px;
+  padding-left: 0.3rem;
 }
 
 .play-again-button:hover {
-  background-color: rgb(99, 57, 71);
-  color: white;
+  background-color: $dark-pink;
+  color: $white;
 }
 
 .board {
@@ -36,23 +51,26 @@
   height: 80%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 5px;
+  grid-gap: 0.3rem;
   justify-items: center;
   justify-content: center;
 }
 
 .game-card {
-  min-width: 100px;
+  min-width: 6.25rem;
   width: 50%;
   aspect-ratio: 2/3;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 43.75rem) {
   .board {
     grid-template-columns: repeat(3, 1fr);
   }
   .game-card {
-    min-width: 50px;
-    max-width: 70px;
+    min-width: 3rem;
+    max-width: 4.4rem;
+  }
+  .info-text {
+    font-size: 0.9rem;
   }
 }

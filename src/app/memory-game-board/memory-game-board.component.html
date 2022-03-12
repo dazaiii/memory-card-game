@@ -3,12 +3,14 @@
     <mat-icon>replay</mat-icon>
     <span class="play-again-text">Play again</span>
   </button>
+  <div class="info-text">Round: {{ rounds }}</div>
+  <div class="info-text">Pairs: {{ matched / 2 }}</div>
   <app-time-counter
     [startTimer]="startTime"
     [isTimeStopped]="stopTimer()"
   ></app-time-counter>
+  <div class="info-text" [@gameStatus]="gameStatus">You won</div>
 </div>
-<h2 class="win-text" [@gameStatus]="gameStatus">You won</h2>
 <div class="board">
   <app-game-card
     class="game-card"

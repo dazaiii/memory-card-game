@@ -51,6 +51,8 @@ export class MemoryGameBoardComponent implements OnInit {
 
   gameStatus: GameStatus;
 
+  rounds: number = 0;
+
   ngOnInit(): void {
     this.playAgain();
   }
@@ -62,10 +64,13 @@ export class MemoryGameBoardComponent implements OnInit {
     this.addImages();
     this.addCards();
     this.startTime = new Date(Date.now());
+    if (this.gameStatus === GameStatus.GameCompleted) {
+      this.rounds += 1;
+    }
     this.gameStatus = GameStatus.DuringTheGame;
   }
 
-  checkGameStatus() {
+  checkGameStatus(): void {
     if (this.matched !== 2 * this.imagesAmount) {
       this.gameStatus = GameStatus.DuringTheGame;
     }
@@ -106,7 +111,7 @@ export class MemoryGameBoardComponent implements OnInit {
       .map((a) => a[1]);
   }
 
-  randomize(min: number, max: number) {
+  randomize(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 

@@ -4,15 +4,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## About
 
-This application is created using Angular, Angular Material, Angular Animations, TypeScript, SCSS and HTML.
+This application was created using Angular, Angular Material, Angular Animations, TypeScript, SCSS and HTML.
 
 This project uses Angular Animations to animate card flip and card disappearing after finding a pair. Animations are triggered by a card flip status which has three states - default, flipped and matched. App is also using Angular Material for UI components.
 
-The built-in game timer which counts time of the game is created using RxJS timer.
+The built-in game timer which counts time of the game was created using RxJS timer.
 
 Navigation was made with Angular Routing. Application can be used on different media types/devices because of media queries.
 
-Unit tests are created with Jasmine and Karma.
+Unit tests were created with Jasmine and Karma. I have added CI/CD driver for GitHub to run tests on every push to the repository.
 
 ## Game
 

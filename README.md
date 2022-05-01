@@ -2,26 +2,40 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
 
-## Development server
+## About
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This application is created using Angular, Angular Material, Angular Animations, TypeScript, SCSS and HTML.
 
-## Code scaffolding
+This project uses Angular Animations to animate card flip and card disappearing after finding a pair. Animations are triggered by a card flip status which has three states - default, flipped and matched. App is also using Angular Material for UI components.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The built-in game timer which counts time of the game is created using RxJS timer.
 
-## Build
+Navigation was made with Angular Routing. Application can be used on different media types/devices because of media queries.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Unit tests are created with Jasmine and Karma.
 
-## Running unit tests
+## Game
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Game rules are very simple. You are turning out cards and trying to find all the pairs. If you find all of them, you will win. After clicking `play again` you can start again with new shuffeled cards. In the top right corner there is a timer which counts your time, info how many pairs did you find and number of the round which increments when you win.
 
-## Running end-to-end tests
+![Screen1](src/assets/screens/screen1.png)
+![Screen2](src/assets/screens/screen2.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Home
 
-## Further help
+Home page contains two buttons - play and info about the game. You can also navigate to the same places through the sidenav.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Home](src/assets/screens/home.png)
+![Sidenav](src/assets/screens/sidenav.png)
+
+## About page
+
+About page contains short instruction how to play the game.
+
+![Screen4](src/assets/screens/screen4.png)
+
+## Mobile devices
+
+Game can be run on mobile devices.
+
+![Screen3](src/assets/screens/screen3.png)
